@@ -21,10 +21,10 @@ after_success:
 deploy:
     edge: true
     provider: elasticbeanstalk # 외부 서비스 표시(s3, elasticbeanstalk, firebase 등등)
-    region: "ap-southeast-2" # 현재 사용하고 있는 AWS의 서비스가 위치하고 있는 물리적 장소
+    region: "ap-northeast-2" # 현재 사용하고 있는 AWS의 서비스가 위치하고 있는 물리적 장소
     app: "docker-react-app" # 생성된 어플레키이션 이름
     env: "Docker-react-app-env" # 환경의 이름
-    bucket_name: "elasticbeanstalk-ap-southeast-2-989988856674" # 해당 elasticbeanstalk을 위한 s3 버켓 이름
+    bucket_name: "elasticbeanstalk-ap-northeast-2-989988856674" # 해당 elasticbeanstalk을 위한 s3 버켓 이름
     bucket_path: "docker-react-app"
     on:
         branch: master
