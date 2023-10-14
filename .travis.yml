@@ -7,7 +7,7 @@ language: generic # 언어(플랫폼)을 선택
 services: # 도커 환경 구성
     - docker
 
-befoe_install: # 스크립트를 실행할 수 있는 파일 명시 및 이미지 다운
+before_install: # 스크립트를 실행할 수 있는 파일 명시 및 이미지 다운
     - echo "start Creating an image with dockerfile"
     - docker build -t yonghyeon/docker-react-app -f Dockerfile.dev ./
 
