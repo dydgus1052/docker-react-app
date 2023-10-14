@@ -1,3 +1,5 @@
+#Test
+
 sudo: required # 관리자 권한 갖기
 
 language: generic # 언어(플랫폼)을 선택
@@ -14,3 +16,17 @@ script: # 실행할 스크립트(테스트 실행)
 
 after_success:
     - echo "Test Success"
+
+# 배포
+deploy:
+    provider: elasticbeanstalk # 외부 서비스 표시(s3, elasticbeanstalk, firebase 등등)
+    region: "ap-southeast-2" # 현재 사용하고 있는 AWS의 서비스가 위치하고 있는 물리적 장소
+    app: "docker-react-app" # 생성된 어플레키이션 이름
+    env: "DockerReactApp-env" # 환경의 이름
+    bucket_name: "elasticbeanstalk-ap-southeast-2-989988856674" # 해당 elasticbeanstalk을 위한 s3 버켓 이름
+    bucket_path: "docker-react-app"
+    on:
+        branch: main
+
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_ACCESS_KEY
