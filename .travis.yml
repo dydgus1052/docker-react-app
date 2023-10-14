@@ -27,7 +27,6 @@ deploy:
     bucket_name: "elasticbeanstalk-ap-northeast-2-989988856674" # 해당 elasticbeanstalk을 위한 s3 버켓 이름
     bucket_path: "docker-react-app"
     on:
-        branch: master
-
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
+        branch: main
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
